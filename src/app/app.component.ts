@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Employee } from 'src/classes/employee';
-import { Department, Developer, Tester } from 'src/classes/employeeTest';
+// import { Department, Developer, Tester } from 'src/classes/employeeTest';
 import { Monkey, Pigeon, Zoo } from 'src/classes/zoo';
+import { EmployeeABCD } from 'src/classes/switch';
 
 
 @Component({
@@ -39,6 +40,11 @@ export class AppComponent {
    zoo.addAnimal(bird1);
 
    zoo.triggerAlarm();
+
+   var emp = new EmployeeABCD("developer");
+   emp.printPosition();
+
+
   }
 }
 
