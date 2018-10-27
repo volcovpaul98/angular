@@ -30,7 +30,7 @@ constructor() {
 }
 
     generateAllReports(): void{
-        for (var i =0; <this.eployees.length; i++){
+        for (var i =0; <this.eployees.length; i++>){
             console.log(this.employees[i].getReport());
         }
     }
