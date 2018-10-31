@@ -3,6 +3,7 @@ import { Employee } from 'src/classes/employee';
 // import { Department, Developer, Tester } from 'src/classes/employeeTest';
 import { Monkey, Pigeon, Zoo } from 'src/classes/zoo';
 import { EmployeeABCD } from 'src/classes/switch';
+import { Person } from 'src/classes/persons';
 
 
 @Component({
@@ -12,6 +13,8 @@ import { EmployeeABCD } from 'src/classes/switch';
 })
 export class AppComponent {
   title = 'curs';
+  person : Person;
+
 
   constructor() {
     // var depart = new Department();
@@ -30,22 +33,26 @@ export class AppComponent {
     // console.log (Profesor1)
     // let emp = new Employee( "andrei", "last", 1);
     // console.log(emp.firstname);
-   var zoo = new Zoo();
-   var monkey1 = new Monkey();
-   var monkey2 = new Monkey();
-   var bird1 = new Pigeon ();
+  //  var zoo = new Zoo();
+  //  var monkey1 = new Monkey();
+  //  var monkey2 = new Monkey();
+  //  var bird1 = new Pigeon ();
 
-   zoo.addAnimal(monkey1);
-   zoo.addAnimal(monkey2);
-   zoo.addAnimal(bird1);
+  //  zoo.addAnimal(monkey1);
+  //  zoo.addAnimal(monkey2);
+  //  zoo.addAnimal(bird1);
 
-   zoo.triggerAlarm();
+  //  zoo.triggerAlarm();
 
-   var emp = new EmployeeABCD("developer");
-   emp.printPosition();
-
+  //  var emp = new EmployeeABCD("developer");
+  //  emp.printPosition();
+  this.person =new Person ("Radu", "Dani");
+  }
+  public doSomething(){
+    this.person.finishedProjects+=2-20+150;
 
   }
 }
+
 
 
