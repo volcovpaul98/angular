@@ -4,6 +4,10 @@ import { Employee } from 'src/classes/employee';
 import { Monkey, Pigeon, Zoo } from 'src/classes/zoo';
 import { EmployeeABCD } from 'src/classes/switch';
 import { Person } from 'src/classes/persons';
+import { FormsModule } from '@angular/forms';
+import { CarNg } from 'src/classes/carng';
+
+
 
 
 @Component({
@@ -14,9 +18,25 @@ import { Person } from 'src/classes/persons';
 export class AppComponent {
   title = 'curs';
   person : Person;
+  zoom:boolean;
+  colorRed:boolean;
+  
 
 
+
+  currentClasses: {};
+  usedefault() {
+    this.currentClasses ={
+    'zoomIn': true,
+    'backgroundblue': true,
+    'zoomOut': false,
+    'backgroundred': false
+    
+    };
+  }
   constructor() {
+    var model = prompt ("what model is your car ?");
+    this.usedefault();
     // var depart = new Department();
     // var dev1 = new Developer("John");
     // var dev2 = new Developer("Alex");
@@ -52,6 +72,7 @@ export class AppComponent {
     this.person.finishedProjects+=2-20+150;
 
   }
+
 }
 
 

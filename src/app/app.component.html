@@ -30,3 +30,40 @@
       number : {{person.finishedProjects}}
     </div>
 </div>
+<!-- <div [ngClass]="currentClasses">
+
+</div> -->
+
+<input type="checkbox" [(ngModel)]="currentClasses.zoomOut">
+<input type="checkbox" [(ngModel)]="currentClasses.backgroundRed">
+<input type="checkbox" [(ngModel)]="currentClasses.backgroundBlue">
+<input type="checkbox"  [(ngModel)]="currentClasses.zoomIn">
+<div [ngClass]="currentClasses">Look here</div>
+<button (click)="usedefault()">update</button>
+<style>
+  zoomIn {
+    width:300px !important ;
+    height:300px !important;
+  }
+  zoomOut {
+    width:150px;
+    height: 150px;
+  }
+  backgroundBlue {
+    background-color:blue !important ;
+
+  }
+  backgroundRed {
+    background-color:red;
+  }
+
+</style>
+
+  <div *ngIf="carcar">
+    <button [(ngModel)]="carcar.model"></button>
+    <button [(ngModel)]="caracar.desc"></button>
+  </div>
+
+<div >
+    My car is {{car.model}}
+</div>
