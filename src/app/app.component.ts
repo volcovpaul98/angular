@@ -5,7 +5,7 @@ import { Monkey, Pigeon, Zoo } from 'src/classes/zoo';
 import { EmployeeABCD } from 'src/classes/switch';
 import { Person } from 'src/classes/persons';
 import { FormsModule } from '@angular/forms';
-import { CarNg } from 'src/classes/carng';
+// import { CarNg } from 'src/classes/carng';
 
 
 
