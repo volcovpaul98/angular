@@ -1,6 +1,15 @@
-<div class ="firstUser">
-  <div class="">
-    {{user1.username}} + {{user1.email}} + {{user1.isActive}};
- 
-  </div>
-</div>
+      <div class="tableRow"> 
+            <div class="tableCell">
+            {{user.username}}
+            </div>
+      </div>
+      <div class="tableRow">
+            <div class="tableCell">
+                {{user.email}}
+            </div>
+      </div>
+      <div class="tableRow">
+            <div class="tableCell">
+                  <input type="checkbox" [(ngModel)]="user.isActive" disabled>
+            </div>
+      </div>

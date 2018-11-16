@@ -1,11 +1,7 @@
-export class Users {
+export class User {
     username:string;
     email:string;
     isActive:boolean;
     
-  constructor (usernameus:string,emailus:string,isActiveus:boolean){
-    username:usernameus;
-    email:emailus;
-    isActive:isActiveus;
-  }
+ 
 }

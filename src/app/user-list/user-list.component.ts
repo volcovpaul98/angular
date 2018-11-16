@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Users} from 'src/classes/user'
+import { User} from 'src/classes/user'
 
 @Component({
   selector: 'app-user-list',
@@ -7,16 +7,29 @@ import { Users} from 'src/classes/user'
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  ListOfUsers: Users[];
+  ListOfUsers: User[];
   constructor() { 
     this.ListOfUsers= [];
-    var user1 = new  Users("Andrei","andrei2915@yahoo.com",false);
-    var user2 = new Users("andrew","andrew151@yahoo.com",true);
+    var user1 = new  User();
+    user1.username = "andrew";
+    user1.email="andrew@gmail.com"
+    user1.isActive=true;
+
+    
+    var user2 = new User();
+    user2.username = "Roxana";
+    user2.email = "roxana22@gmail.com"
+    user2.isActive= false;
+
+    
    this.ListOfUsers.push(user1);
    this.ListOfUsers.push(user2);
   }
 
   ngOnInit() {
   }
-
+  userAdded(user:User){
+    console.log("received user with name " + user.username);
+    this.ListOfUsers.push(user);
+  }
 }

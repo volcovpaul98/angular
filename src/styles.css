@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+.tableCell {
+width:300px;
+
+
+}
+.tableRow {
+    display:inline-block;
+   
+    padding:8px;
+}
+.ball {
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color:gray;
+    float:left;
+}   
+.border {
+    width:700px;
+    height: 120px;
+    border:1px solid red;
+    margin-top: 15px;
+}

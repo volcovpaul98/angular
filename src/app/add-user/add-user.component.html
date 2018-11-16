@@ -1,0 +1,13 @@
+
+  
+  <div class="tablecell">
+    <input type="text" [(ngModel)]="user.username">
+  </div>
+  <div class="tablecell">
+    <input type="text" [(ngModel)]="user.email">
+    
+  </div>
+  <div class="tablecell">
+    <input type="checkbox" [(ngModel)]="user.isActive">
+    <button (click)="addUser()">Add</button>
+  </div>
