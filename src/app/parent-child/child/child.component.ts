@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Child} from 'src/classes/child'
 @Component({
   selector: 'app-child',
@@ -8,7 +8,14 @@ import { Child} from 'src/classes/child'
 export class ChildComponent  {
   @Input()
   child:Child;
+  
+  @Output()
+  emitPass:  EventEmitter<number>= new EventEmitter()
+  
   constructor() { }
 
- 
+  passBall(){
+    this.emitPass.emit(this.child.id);
+    console.log(this.child.id)
+  }
 }

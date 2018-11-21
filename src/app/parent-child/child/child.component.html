@@ -2,5 +2,5 @@
   <div class="nameChild">
     {{child.name}}
   </div>
-  <div class="ball" *ngFor="let ball of child.balls"></div>
+  <div class="ball" *ngFor="let ball of child.balls" (click)="passBall()"></div>
 </div>

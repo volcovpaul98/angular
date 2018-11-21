@@ -24,5 +24,15 @@ child2:Child;
 }
   ngOnInit() {
   }
+ passBall (id : number) {
+   if (id == 1) {
+    this.child1.removeBalls();
+    this.child2.addBalls();
+   }
+   else if (id == 2 ) {
+    this.child2.removeBalls();
+    this.child1.addBalls();
+   }
 
+ }
 }

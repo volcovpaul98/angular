@@ -1,8 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    
+        text-align: center;
+        background: cornflowerblue;
+    
+}
+.topmargin {
+    margin-top:30px;
+    font-size:29px;
+    text-align: center;
+}
 .tableCell {
 width:300px;
 
 
+
+}
+.tablecell input {
+    background: white;
+    border: 1px solid red;
+    width: 300px;
 }
 .tableRow {
     display:inline-block;
@@ -10,15 +27,26 @@ width:300px;
     padding:8px;
 }
 .ball {
-    width:20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color:gray;
+    margin-left: 5px;
     float:left;
+    margin-top:20px;
 }   
 .border {
     width:700px;
     height: 120px;
     border:1px solid red;
     margin-top: 15px;
+    padding:30px;
+}
+.buttonsforrouter {
+    background-color:#3f3f3f3f;
+   
+    border:3px solid #3a3a3a3a;
+    padding:15px;
+    cursor:pointer;
+    
 }

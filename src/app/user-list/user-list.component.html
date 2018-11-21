@@ -1,4 +1,4 @@
-
+<div class="topmargin">
   <div *ngFor="let user of ListOfUsers">
   <app-user [user]="user"></app-user>
   </div>
@@ -6,3 +6,4 @@
     <app-add-user (userAdded)="userAdded($event)"></app-add-user>
   </div>
 
+</div>

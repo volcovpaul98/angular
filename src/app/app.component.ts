@@ -35,7 +35,7 @@ export class AppComponent {
     };
   }
   constructor() {
-    var model = prompt ("what model is your car ?");
+
     this.usedefault();
     // var depart = new Department();
     // var dev1 = new Developer("John");
