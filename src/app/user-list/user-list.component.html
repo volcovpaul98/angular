@@ -1,6 +1,6 @@
 <div class="topmargin">
   <div *ngFor="let user of ListOfUsers">
-  <app-user [user]="user"></app-user>
+  <app-user [user]="user" (removeuser)="deleteThisUser($event)"></app-user>
   </div>
   <div class="tableRow">
     <app-add-user (userAdded)="userAdded($event)"></app-add-user>

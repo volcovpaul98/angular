@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User} from 'src/classes/user'
 
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -11,10 +12,14 @@ export class UserComponent  {
 user:User;
 @Output()
 removeuser: EventEmitter<User> = new EventEmitter();
+
   constructor() { }
 
   deleteUser (){
-    this.removeuser.emit(this.user)
+    console.log(this.user)
+    this.removeuser.emit(this.user);
+
   }
-  
+ 
 }
+  

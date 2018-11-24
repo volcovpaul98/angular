@@ -32,4 +32,11 @@ export class UserListComponent implements OnInit {
     console.log("received user with name " + user.username);
     this.ListOfUsers.push(user);
   }
+  deleteThisUser(user:User){
+    const index = this.ListOfUsers.indexOf(user,0);
+    if  (index > -1){
+      this.ListOfUsers.splice(index, 1);
+    }
+    
+  }
 }
