@@ -10,6 +10,7 @@ import { ParentComponent } from './parent-child/parent/parent.component';
 import { ChildComponent } from './parent-child/child/child.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TestComponent } from './test/test.component';
+import { FormExerciceComponent } from './form-exercice/form-exercice.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TestComponent } from './test/test.component';
     AddUserComponent,
     ParentComponent,
     ChildComponent,
-    TestComponent
+    TestComponent,
+    FormExerciceComponent
   ],
   imports: [
     BrowserModule,FormsModule, AppRoutingModule ,RouterModule 

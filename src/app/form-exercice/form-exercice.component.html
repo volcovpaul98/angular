@@ -1,0 +1,30 @@
+<form  (ngSubmit)="formSubmit()" #carForm="ngForm">
+  <div class="form-group" style="width: 22%;margin: 0 auto;">
+    <input class="form-control space" type="text" [(ngModel)]="car.model" #model="ngModel" name="model" placeholder="Model for your Car" required #spy>
+    <div> {{spy.className}}</div>
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+       Model is required
+    </div>
+    <input class="form-control space" type="text" [(ngModel)]="car.vin" #vin="ngModel" name="vin" placeholder=" Vin Code" required minlength="17" maxlength="17">
+    <input class="form-control space" type="number" [(ngModel)]="car.year" name="year" placeholder="Year" >
+    <!-- <input class="form-control space" type="text" [(ngModel)]="car.engine" name="engine" placeholder="Engine"> -->
+    <select class="form-control" name="engine2" [(ngModel)]="car.engine" required>
+      <option *ngFor="let a of engines" [value]="a">{{a}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" [(ngModel)]="car.forSale" name="forSale">
+    <label class="form-check-label" for="forSale"> IsForSale ?</label>
+  </div>
+  <button [disabled]="!carForm.valid" class="btn btn-primary" type="submit">Save</button>
+
+</form>
+
+
+
+
+
+<!--  -->
+<!-- <div [hidden]="aaa.value">
+    Model is required!!
+  </div> -->
