@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -11,24 +11,27 @@ import { ChildComponent } from './parent-child/child/child.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TestComponent } from './test/test.component';
 import { FormExerciceComponent } from './form-exercice/form-exercice.component';
+import { Form2Component } from './form2/form2.component';
+import { CarService } from './car.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-
     UserListComponent,
     UserComponent,
     AddUserComponent,
     ParentComponent,
     ChildComponent,
     TestComponent,
-    FormExerciceComponent
+    FormExerciceComponent,
+    Form2Component
   ],
   imports: [
-    BrowserModule,FormsModule, AppRoutingModule ,RouterModule 
+    BrowserModule,FormsModule, AppRoutingModule ,RouterModule ,   ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [CarService],
+   
+  bootstrap: [AppComponent] ,
 })
 export class AppModule { }
 

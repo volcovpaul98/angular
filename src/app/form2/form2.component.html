@@ -1,0 +1,29 @@
+<form  (ngSubmit)="onSubmit()" [formGroup]="carForm">
+  <div class="form-group" style="width: 22%;margin: 0 auto;">
+    <input class="form-control space" formControlName="model" type="text"  placeholder="Model for your Car" >
+    <div *ngIf="!carForm.controls.model.valid && !carForm.controls.model.pristine">
+       Model is Required
+    </div>
+    <input class="form-control space" formControlName="vin" type="text"  placeholder=" Vin Code" >
+    <div *ngIf="carForm.controls.vin.errors && !carForm.controls.vin.pristine">
+      <div *ngIf="carForm.controls.vin.errors.minlength">Minimum 17 characters</div>
+      <div *ngIf="carForm.controls.vin.errors.maxlength">Maximum 17 characters</div>
+      <div *ngIf="carForm.controls.vin.errors.required">Vin is required</div>
+    </div>
+    <input class="form-control space" formControlName="year" type="number" placeholder="Year" >
+    <div *ngIf="carForm.controls.year.errors && !carForm.controls.year.pristine">
+      <div *ngIf="carForm.controls.year.errors.min">we have cars only since the year 1900</div>
+      <div *ngIf="carForm.controls.year.errors.max">The model of this car does not exist in this year</div>
+      <div *ngIf="carForm.controls.year.errors.required">Year is required (1900+)</div>
+    </div>
+  </div>
+  <select class="form-control space" formControlName="engine" style="width:22%;margin:0 auto;" >
+    <option *ngFor="let a of engines" [value]="a">{{a}}</option>
+  </select>
+  <div class="form-group">
+    <input type="checkbox" formControlName="forSale">
+    <label class="form-check-label" > IsForSale ?</label>
+  </div>
+  <button [disabled]="!carForm.valid" class="btn btn-primary" type="submit">Save</button>
+
+</form>
