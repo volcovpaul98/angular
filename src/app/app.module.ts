@@ -13,6 +13,7 @@ import { TestComponent } from './test/test.component';
 import { FormExerciceComponent } from './form-exercice/form-exercice.component';
 import { Form2Component } from './form2/form2.component';
 import { CarService } from './car.service';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CarService } from './car.service';
     ChildComponent,
     TestComponent,
     FormExerciceComponent,
-    Form2Component
+    Form2Component,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,FormsModule, AppRoutingModule ,RouterModule ,   ReactiveFormsModule
