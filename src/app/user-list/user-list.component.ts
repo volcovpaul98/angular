@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User} from 'src/classes/user'
+import { User } from 'src/classes/user'
+import { EmployeesService } from '../employees.service';
 
 @Component({
   selector: 'app-user-list',
@@ -8,35 +9,42 @@ import { User} from 'src/classes/user'
 })
 export class UserListComponent implements OnInit {
   ListOfUsers: User[];
-  constructor() { 
-    this.ListOfUsers= [];
-    var user1 = new  User();
-    user1.username = "andrew";
-    user1.email="andrew@gmail.com"
-    user1.isActive=true;
+  usersService: EmployeesService;
+  isLoading : boolean;
 
-    
-    var user2 = new User();
-    user2.username = "Roxana";
-    user2.email = "roxana22@gmail.com"
-    user2.isActive= false;
 
+  constructor(userservice: EmployeesService) {
+    this.usersService = userservice;
     
-   this.ListOfUsers.push(user1);
-   this.ListOfUsers.push(user2);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getUsers();
   }
-  userAdded(user:User){
+  getUsers() {
+    this.isLoading= true;
+    this.usersService.getAll().subscribe(response => {
+      console.log(response);
+      this.isLoading= false;
+      this.ListOfUsers = response;
+    })
+  }
+
+  userAdded(user: User) {
     console.log("received user with name " + user.username);
-    this.ListOfUsers.push(user);
+    this.isLoading= true;
+    this.usersService.saveUser(user).subscribe(x => {
+      this.isLoading= false;
+     this.getUsers();
+    });
   }
-  deleteThisUser(user:User){
-    const index = this.ListOfUsers.indexOf(user,0);
-    if  (index > -1){
-      this.ListOfUsers.splice(index, 1);
+  deleteThisUser(user: User) {
+    this.isLoading= true;
+      this.usersService.deleteUser(user._id).subscribe(x=>{
+        this.isLoading= false;
+        this.getUsers();
+      })
     }
-    
+
   }
-}
+

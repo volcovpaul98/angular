@@ -14,6 +14,7 @@ import { FormExerciceComponent } from './form-exercice/form-exercice.component';
 import { Form2Component } from './form2/form2.component';
 import { CarService } from './car.service';
 import { ObservableComponent } from './observable/observable.component';
+import { HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { ObservableComponent } from './observable/observable.component';
     ObservableComponent
   ],
   imports: [
-    BrowserModule,FormsModule, AppRoutingModule ,RouterModule ,   ReactiveFormsModule
+    BrowserModule,FormsModule, AppRoutingModule ,RouterModule ,   ReactiveFormsModule , HttpModule
   ],
   providers: [CarService],
    

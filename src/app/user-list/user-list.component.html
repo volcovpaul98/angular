@@ -1,4 +1,4 @@
-<div class="topmargin">
+<div class="topmargin" *ngIf="!isLoading">
   <div *ngFor="let user of ListOfUsers">
   <app-user [user]="user" (removeuser)="deleteThisUser($event)"></app-user>
   </div>
