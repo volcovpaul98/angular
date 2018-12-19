@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Car } from 'src/classes/model'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CarService } from '../car.service';
@@ -8,13 +8,17 @@ import { CarService } from '../car.service';
   styleUrls: ['./form2.component.css']
 })
 export class Form2Component implements OnInit {
-  car: Car;
+  
   carForm: FormGroup;
   carVersions: Car[] = [];
   engines = ['Gasoline', 'Diesel', 'Hybrid', 'Electric'];
+  @Input()
+  car:Car;
+  @Output()
+  submit: EventEmitter<Car> = new EventEmitter();
+  
   constructor(fb: FormBuilder, serv: CarService) {
     var date = new Date(); 
-    this.car = serv.getCar();
     this.carForm = fb.group({
       model: [this.car.model, Validators.required],
       vin: [this.car.vin, Validators.compose([Validators.required, Validators.minLength(17), Validators.maxLength(17)])],
@@ -32,6 +36,7 @@ export class Form2Component implements OnInit {
     this.car = this.carForm.value;
     console.log(this.car);
     console.log(this.carVersions);
+    this.submit.emit(this.car);
   }
   onReset() {
     this.carForm.reset(this.car);

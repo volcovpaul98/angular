@@ -15,6 +15,8 @@ import { Form2Component } from './form2/form2.component';
 import { CarService } from './car.service';
 import { ObservableComponent } from './observable/observable.component';
 import { HttpModule} from "@angular/http";
+import { AddCarComponent } from './add-car/add-car.component';
+import { EditCarComponent } from './edit-car/edit-car.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HttpModule} from "@angular/http";
     TestComponent,
     FormExerciceComponent,
     Form2Component,
-    ObservableComponent
+    ObservableComponent,
+    AddCarComponent,
+    EditCarComponent
   ],
   imports: [
     BrowserModule,FormsModule, AppRoutingModule ,RouterModule ,   ReactiveFormsModule , HttpModule
